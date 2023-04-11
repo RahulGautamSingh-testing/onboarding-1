@@ -22,7 +22,26 @@ DEBUG: Create Onboarding Cache (repository=RahulGautamSingh-testing/onboarding-1
        }
 ```
 ### Second Run 
-*note: actually 3rd run because I updated baseBranch before running which invalidated the cache
+*note: invalidates cache as baseBranch was updated
+```log
+DEBUG: checkOnboarding() (repository=RahulGautamSingh-testing/onboarding-1)
+DEBUG: isOnboarded() (repository=RahulGautamSingh-testing/onboarding-1)
+DEBUG: Checking cached config file name (repository=RahulGautamSingh-testing/onboarding-1)
+... clones and check for config file ...
+DEBUG: Repo is not onboarded (repository=RahulGautamSingh-testing/onboarding-1)
+DEBUG: getBranchPr(renovate/configure) (repository=RahulGautamSingh-testing/onboarding-1)
+DEBUG: findPr(renovate/configure, undefined, open) (repository=RahulGautamSingh-testing/onboarding-1)
+DEBUG: Found PR #1 (repository=RahulGautamSingh-testing/onboarding-1)
+DEBUG: Onboarding PR already exists (repository=RahulGautamSingh-testing/onboarding-1)
+DEBUG: Merge onboarding branch in default branch (repository=RahulGautamSingh-testing/onboarding-1)
+DEBUG: Update Onboarding Cache (repository=RahulGautamSingh-testing/onboarding-1)
+       "onboardingCache": {
+         "defaultBranchSha": "0a30f967577b454d5aa5f012c9fe0c1f1f46ab19",
+         "onboardingBranchSha": "9c7af2c45636235eca3352be86dc35ebd64ddb4a",
+         "isConflicted": false
+       }
+```
+### Third Run 
 ```log
 DEBUG: checkOnboarding() (repository=RahulGautamSingh-testing/onboarding-1)
 DEBUG: isOnboarded() (repository=RahulGautamSingh-testing/onboarding-1)
