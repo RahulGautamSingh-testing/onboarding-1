@@ -20,6 +20,8 @@ DEBUG: Create Onboarding Cache (repository=RahulGautamSingh-testing/onboarding-1
          "onboardingBranchSha": "9c7af2c45636235eca3352be86dc35ebd64ddb4a",
          "isConflicted": false
        }
+...
+DEBUG: extract() (repository=RahulGautamSingh-testing/onboarding-1)
 ```
 ### Second Run 
 *note: invalidates cache as baseBranch was updated
@@ -40,6 +42,10 @@ DEBUG: Update Onboarding Cache (repository=RahulGautamSingh-testing/onboarding-1
          "onboardingBranchSha": "9c7af2c45636235eca3352be86dc35ebd64ddb4a",
          "isConflicted": false
        }
+...
+DEBUG: extract() (repository=RahulGautamSingh-testing/onboarding-1)
+DEBUG: Cached extract result cannot be used due to base branch SHA change (old=ede1592fa1f26a98af1ea5c1e0d91ad8e3bc6a37, new=0a30f967577b454d5aa5f012c9fe0c1f1f46ab19) 
+(repository=RahulGautamSingh-testing/onboarding-1)
 ```
 ### Third Run 
 ```log
@@ -63,4 +69,7 @@ DEBUG: Update Onboarding Cache (repository=RahulGautamSingh-testing/onboarding-1
          "onboardingBranchSha": "9c7af2c45636235eca3352be86dc35ebd64ddb4a",
          "isConflicted": false
        }
+...
+DEBUG: extract() (repository=RahulGautamSingh-testing/onboarding-1)
+DEBUG: Cached extract for sha=0a30f967577b454d5aa5f012c9fe0c1f1f46ab19 is valid and can be used (repository=RahulGautamSingh-testing/onboarding-1)
 ```
