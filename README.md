@@ -2,7 +2,7 @@
 
 Run on a not-onboarded repo using new logic.
 
-## Expectations:
+## Tests:
   - Creates onboarding Pr
   - Creates onboarding cache
   - On second run updates the cache
@@ -70,4 +70,17 @@ DEBUG: Update Onboarding Cache (repository=RahulGautamSingh-testing/onboarding-1
 ...
 DEBUG: extract() (repository=RahulGautamSingh-testing/onboarding-1)
 DEBUG: Cached extract for sha=0a30f967577b454d5aa5f012c9fe0c1f1f46ab19 is valid and can be used (repository=RahulGautamSingh-testing/onboarding-1)
+```
+
+## Closed PR Run
+PR Link: https://github.com/RahulGautamSingh-testing/onboarding-1/pull/4
+```log
+DEBUG: isOnboarded() (repository=RahulGautamSingh-testing/onboarding-1)
+DEBUG: findPr(renovate/configure, Configure Renovate, !open) (repository=RahulGautamSingh-testing/onboarding-1)
+DEBUG: getPrList success (repository=RahulGautamSingh-testing/onboarding-1)
+       "pullsTotal": 4,
+       "requestsTotal": 1,
+       "apiQuotaAffected": true
+DEBUG: Found closed onboarding PR (repository=RahulGautamSingh-testing/onboarding-1)
+DEBUG: Delete Onboarding Cache (repository=RahulGautamSingh-testing/onboarding-1)
 ```
