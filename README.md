@@ -7,6 +7,7 @@ Run on a not-onboarded repo using new logic.
   - Creates onboarding cache
   - On second run updates the cache
   - I updated the baseBranch on 3rd run: then isOnboarded() was caclulated after cloning and cache was updated 
+  - Merge PR and run again
   
 ## Relevant Logs
 ### First Run
@@ -82,5 +83,27 @@ DEBUG: getPrList success (repository=RahulGautamSingh-testing/onboarding-1)
        "requestsTotal": 1,
        "apiQuotaAffected": true
 DEBUG: Found closed onboarding PR (repository=RahulGautamSingh-testing/onboarding-1)
+DEBUG: Delete Onboarding Cache (repository=RahulGautamSingh-testing/onboarding-1)
+```
+
+## Run after mergning onboarding pr
+
+```log
+DEBUG: isOnboarded() (repository=RahulGautamSingh-testing/onboarding-1)
+DEBUG: findPr(renovate/configure, Configure Renovate, !open) (repository=RahulGautamSingh-testing/onboarding-1)
+DEBUG: getPrList success (repository=RahulGautamSingh-testing/onboarding-1)
+       "pullsTotal": 7,
+       "requestsTotal": 1,
+       "apiQuotaAffected": true
+DEBUG: Found PR #7 (repository=RahulGautamSingh-testing/onboarding-1)
+DEBUG: Checking cached config file name (repository=RahulGautamSingh-testing/onboarding-1)
+DEBUG: Existing config file confirmed (repository=RahulGautamSingh-testing/onboarding-1)
+DEBUG: Repository config (repository=RahulGautamSingh-testing/onboarding-1)
+       "fileName": "renovate.json",
+       "config": {
+         "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+         "extends": ["local>RahulGautamSingh-testing/renovate-config"]
+       }
+DEBUG: Repo is onboarded (repository=RahulGautamSingh-testing/onboarding-1)
 DEBUG: Delete Onboarding Cache (repository=RahulGautamSingh-testing/onboarding-1)
 ```
