@@ -6,11 +6,8 @@ Run on a not-onboarded repo using new logic.
   - Creates onboarding Pr
   - Creates onboarding cache
   - On second run updates the cache
+  - I updated the baseBranch on 3rd run: then isOnboarded() was caclulated after cloning and cache was updated 
   
-## Observations:
-  - Creates onboarding Pr ✅
-  - Creates onboarding cache ✅
-  -  On second run updates the cache ✅
 ## Relevant Logs
 ### First Run
 ```log
@@ -24,7 +21,7 @@ DEBUG: Create Onboarding Cache (repository=RahulGautamSingh-testing/onboarding-1
 DEBUG: extract() (repository=RahulGautamSingh-testing/onboarding-1)
 ```
 ### Second Run 
-*note: invalidates cache as baseBranch was updated
+*note:  cache updated and isOnboarded() was determined using onboardingCache
 ```log
 DEBUG: checkOnboarding() (repository=RahulGautamSingh-testing/onboarding-1)
 DEBUG: isOnboarded() (repository=RahulGautamSingh-testing/onboarding-1)
@@ -48,6 +45,7 @@ DEBUG: Cached extract result cannot be used due to base branch SHA change (old=e
 (repository=RahulGautamSingh-testing/onboarding-1)
 ```
 ### Third Run 
+*note: invalidated and updated cache
 ```log
 DEBUG: checkOnboarding() (repository=RahulGautamSingh-testing/onboarding-1)
 DEBUG: isOnboarded() (repository=RahulGautamSingh-testing/onboarding-1)
